@@ -1,0 +1,22 @@
+   
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--bg-header);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  z-index: 999;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+}

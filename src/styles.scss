@@ -1,7 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 body.light-theme {
   --bg-header: #ffffff;
@@ -13,7 +20,8 @@ body.light-theme {
 }
 
 body.dark-theme {
-  --bg-header: #222222;
+  --bg-header: linear-gradient(90deg, #232366 0%, #4b2266 40%, #121212 100%);
+  --bg-footer: linear-gradient(90deg, #232366 0%, #121212 100%);
   --primary-color: #66ccff;
   --project-bg: #333333;
   --text-color: #eee;
@@ -24,7 +32,36 @@ body.dark-theme {
 .header {
   background: var(--bg-header);
 }
+
 .project {
   background: var(--project-bg);
   color: var(--text-color);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+
+ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+
+  li {
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
 }

@@ -8,56 +8,6 @@ body {
   overflow-x: hidden;
 }
 
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: var(--bg-header);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  z-index: 999;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
-}
-
-.header-content {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 2rem;
-}
-
-ul {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
-
-  li {
-    cursor: pointer;
-    transition: color 0.3s;
-
-    &:hover {
-      color: var(--primary-color);
-    }
-  }
-}
-
-.theme-toggle {
-  background: none;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  white-space: nowrap;
-}
-
-
 .sections {
   padding-top: 80px;
 

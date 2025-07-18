@@ -45,22 +45,13 @@ export class LandingPageComponent implements AfterViewInit {
     });
   }
 
-  scrollTo(sectionId: string) {
-    gsap.to(window, {
-      duration: 1,
-      scrollTo: {
-        y: `#${sectionId}`,
-        offsetY: 80
-      },
-      ease: 'power2.out'
-    });
+  // toggleTheme() {
+  //   this.isDarkMode = !this.isDarkMode;
+  //   document.body.className = this.isDarkMode ? 'dark-theme' : 'light-theme';
+  // }
+onThemeToggle(mode: boolean) {
+    this.isDarkMode = mode;
   }
-
-  toggleTheme() {
-    this.isDarkMode = !this.isDarkMode;
-    document.body.className = this.isDarkMode ? 'dark-theme' : 'light-theme';
-  }
-
   openProject(link: string) {
     window.open(link, '_blank');
   }
