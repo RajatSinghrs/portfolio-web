@@ -1,0 +1,22 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 1000;
+  padding: 1rem;
+  ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+}
+
+.sections {
+  margin-top: 80px;
+  section {
+    height: 100vh;
+    padding: 2rem;
+    border-bottom: 1px solid #ccc;
+  }
+}
