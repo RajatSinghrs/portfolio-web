@@ -1,7 +1,8 @@
 import { AfterViewInit, Component } from '@angular/core';
 import gsap from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
-gsap.registerPlugin(ScrollToPlugin);
+import ScrollTrigger from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollToPlugin,ScrollTrigger);
 
 
 @Component({
@@ -9,21 +10,58 @@ gsap.registerPlugin(ScrollToPlugin);
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })
-export class LandingPageComponent  implements AfterViewInit{
+export class LandingPageComponent implements AfterViewInit {
+    isDarkMode = false;
 
-    ngAfterViewInit(): void {
-    // Additional entrance animations can go here
+  projects = [
+    { title: 'Project 1', link: 'https://example.com/project1' },
+    { title: 'Project 2', link: 'https://example.com/project2' },
+    { title: 'Project 3', link: 'https://example.com/project3' },
+    { title: 'Project 4', link: 'https://example.com/project4' },
+    { title: 'Project 5', link: 'https://example.com/project5' },
+  ];
+
+  ngAfterViewInit(): void {
+    // About section animation
+    gsap.from('#about h2, #about h1, #about p', {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger: 0.3
+    });
+
+    // Work section horizontal scroll
+    gsap.to('.projects', {
+      xPercent: -100,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '#work',
+        start: 'top top',
+        end: '+=1500',
+        scrub: true,
+        pin: true,
+        anticipatePin: 1
+      }
+    });
   }
 
-   scrollTo(sectionId: string) {
+  scrollTo(sectionId: string) {
     gsap.to(window, {
       duration: 1,
       scrollTo: {
         y: `#${sectionId}`,
-        offsetY: 80 // to account for fixed header
+        offsetY: 80
       },
       ease: 'power2.out'
     });
   }
 
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+    document.body.className = this.isDarkMode ? 'dark-theme' : 'light-theme';
+  }
+
+  openProject(link: string) {
+    window.open(link, '_blank');
+  }
 }

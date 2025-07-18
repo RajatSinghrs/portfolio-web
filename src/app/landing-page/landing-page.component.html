@@ -9,13 +9,28 @@
       <li (click)="scrollTo('contact')">Contact</li>
     </ul>
   </nav>
+  <button class="theme-toggle" (click)="toggleTheme()">
+    {{ isDarkMode ? '☀️' : '🌙' }}
+  </button>
 </header>
 
 <main class="sections">
-  <section id="about">About Me</section>
-  <section id="work">Work / Projects</section>
-  <section id="services">Services</section>
-  <section id="tech">Tech Stack</section>
-  <section id="resume">Resume</section>
-  <section id="contact">Contact</section>
+  <section id="about">
+    <h2>Hello 👋</h2>
+    <h1>I'm Rajat Singh</h1>
+    <p>Curious web designer and developer based in Gurugram, India.</p>
+  </section>
+
+  <section id="work" class="horizontal-scroll">
+    <div class="projects">
+      <div class="project" *ngFor="let project of projects" (click)="openProject(project.link)">
+        <h3>{{ project.title }}</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="services"><h2>Services</h2></section>
+  <section id="tech"><h2>Tech Stack</h2></section>
+  <section id="resume"><h2>Resume</h2></section>
+  <section id="contact"><h2>Contact</h2></section>
 </main>
