@@ -1,4 +1,3 @@
-   
 .header {
   position: fixed;
   top: 0;
@@ -6,17 +5,23 @@
   background: var(--bg-header);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   z-index: 999;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
   padding: 1rem 2rem;
 }
 
+// .container {
+//   max-width: 1200px;
+//   margin: 0 auto;
+// }
+
 .header-content {
-  display: flex;
+  // display: flex;
+  // justify-content: flex-end;
+  // align-items: center;
+  // gap: 2rem;
+    display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }

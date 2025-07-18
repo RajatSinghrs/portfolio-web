@@ -2,7 +2,7 @@ import { AfterViewInit, Component } from '@angular/core';
 import gsap from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-gsap.registerPlugin(ScrollToPlugin,ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 
 @Component({
@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollToPlugin,ScrollTrigger);
   styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent implements AfterViewInit {
-    isDarkMode = false;
+  isDarkMode = false;
 
   projects = [
     { title: 'Project 1', link: 'https://example.com/project1' },
@@ -45,13 +45,10 @@ export class LandingPageComponent implements AfterViewInit {
     });
   }
 
-  // toggleTheme() {
-  //   this.isDarkMode = !this.isDarkMode;
-  //   document.body.className = this.isDarkMode ? 'dark-theme' : 'light-theme';
-  // }
-onThemeToggle(mode: boolean) {
+  onThemeToggle(mode: boolean) {
     this.isDarkMode = mode;
   }
+  
   openProject(link: string) {
     window.open(link, '_blank');
   }
