@@ -1,0 +1,21 @@
+.footer {
+  padding: 1rem 1rem;
+  background: var(--bg-header);
+  color: var(--footer-text, #fff);
+  text-align: center;
+
+  .footer-links {
+    margin-top: 1rem;
+
+    a {
+      color: var(--footer-text, #fff);
+      margin: 0 0.75rem;
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover {
+        color: var(--accent-color, #64ffda);
+      }
+    }
+  }
+}
