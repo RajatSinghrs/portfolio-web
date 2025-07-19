@@ -8,20 +8,21 @@
   padding: 1rem 2rem;
 }
 
-// .container {
-//   max-width: 1200px;
-//   margin: 0 auto;
-// }
-
 .header-content {
-  // display: flex;
-  // justify-content: flex-end;
-  // align-items: center;
-  // gap: 2rem;
-    display: flex;
+  display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  white-space: nowrap;
 }
