@@ -1,6 +1,8 @@
-<header class="header" class="header" [class.scrolled]="isScrolled">
+<header class="header" [class.scrolled]="isScrolled">
     <div class="header-content">
-        <div class="logo" (click)="scrollToTop()">RS</div>
+        <!-- <div class="logo" (click)="scrollToTop()">RS</div> -->
+         <div class="logo" (click)="scrollToTop()">RS</div>
+
         <nav>
             <ul>
                 <li (click)="scrollTo('about')">About</li>
@@ -11,11 +13,21 @@
                 <li (click)="scrollTo('contact')">Contact</li>
             </ul>
         </nav>
-        <div class="right-actions">
-            <button class="theme-toggle" (click)="toggleTheme()">
+
+         <div class="right-actions">
+           <!-- <button class="theme-toggle" (click)="toggleTheme()">
                 {{ isDarkMode ? '☀️ Light' : '🌙 Dark' }}
             </button>
             <mat-icon class="code-icon">code</mat-icon>
         </div>
     </div>
+</header> -->
+
+ <button class="theme-toggle" *ngIf="!isCodedPortfolio" (click)="toggleTheme()">
+        {{ isDarkMode ? '☀️ Light' : '🌙 Dark' }}
+      </button>
+      <mat-icon class="code-icon" *ngIf="!isCodedPortfolio" (click)="openCodePortfolio()">code</mat-icon>
+      <mat-icon class="code-icon" *ngIf="isCodedPortfolio" (click)="goHome()">library_books</mat-icon>
+    </div>
+  </div>
 </header>

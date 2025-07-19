@@ -1,1 +1,16 @@
-<p>code-portfolio works!</p>
+<app-header [isDarkMode]="isDarkMode" (themeToggled)="onThemeToggle($event)" [isCodedPortfolio]="true"></app-header>
+
+<main class="sections">
+    <section id="about">
+  
+        <h2>My Coded Portfolio</h2>
+        <ul>
+            <li *ngFor="let item of portfolioItems">
+                <h3>{{item.title}}</h3>
+                <p>{{item.description}}</p>
+            </li>
+        </ul>
+    </section>
+    </main>
+
+<app-footer [isDarkMode]="isDarkMode"></app-footer>
