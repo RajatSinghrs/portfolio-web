@@ -11,6 +11,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import { CodePortfolioComponent } from './code-portfolio/code-portfolio.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/
     LandingPageComponent,
     HeaderComponent,
     FooterComponent,
+    CodePortfolioComponent,
   ],
   imports: [
     BrowserModule,
