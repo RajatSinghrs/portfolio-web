@@ -1,11 +1,28 @@
 <app-header [isDarkMode]="isDarkMode" (themeToggled)="onThemeToggle($event)"></app-header>
 
 <main class="sections">
-  <section id="about">
-    <h2>Hello 👋</h2>
-    <h1>I'm Rajat Singh</h1>
-    <p>Curious web designer and developer based in Gurugram, India.</p>
-  </section>
+
+<section id="about">
+  <div class="about-layout">
+    <div class="column left">
+      <div class="square-box out-left" *ngFor="let box of leftBoxes"></div>
+    </div>
+    <div class="center-content">
+      <h2>Hello there !
+      <span class="wave">👋</span>
+      </h2>
+      <h1>I'm Rajat Singh</h1>
+      <p>Curious web designer and developer based in Gurugram, India.</p>
+    </div>
+
+    <!-- Right Column -->
+    <div class="column right">
+      <div class="square-box out-right" *ngFor="let box of rightBoxes"></div>
+    </div>
+  </div>
+</section>
+
+
 
   <section id="work" class="horizontal-scroll">
     <div class="projects">

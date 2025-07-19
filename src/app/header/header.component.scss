@@ -1,4 +1,3 @@
-   
 .header {
   position: fixed;
   top: 0;
@@ -6,11 +5,6 @@
   background: var(--bg-header);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   z-index: 999;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
   padding: 1rem 2rem;
 }
 
@@ -19,4 +13,46 @@
   justify-content: flex-end;
   align-items: center;
   gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.right-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.code-icon {
+  font-size: 24px;
+  cursor: pointer;
 }
