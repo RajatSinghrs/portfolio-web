@@ -35,15 +35,15 @@ body {
 .horizontal-scroll {
   .projects {
     display: flex;
-    gap: 2rem;
+    gap: 4rem;
     width: fit-content;
-    padding: 2rem;
+    padding: 64px 32px 64px 32px;
 
     .project {
       background: var(--project-bg);
       color: var(--text-color);
-      min-width: 300px;
-      height: 200px;
+      min-width: 500px;
+      height: 600px;
       display: flex;
       align-items: center;
       justify-content: center;
