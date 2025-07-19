@@ -12,6 +12,8 @@ gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 })
 export class LandingPageComponent implements AfterViewInit {
   isDarkMode = false;
+  leftBoxes = new Array(3);
+  rightBoxes = new Array(3);
 
   projects = [
     { title: 'Project 1', link: 'https://example.com/project1' },
@@ -22,13 +24,42 @@ export class LandingPageComponent implements AfterViewInit {
   ];
 
   ngAfterViewInit(): void {
-    // About section animation
-    gsap.from('#about h2, #about h1, #about p', {
+    // Animate intro text
+    gsap.from('.center-content h2, .center-content h1, .center-content p', {
       opacity: 0,
       y: 50,
       duration: 1,
       stagger: 0.3
     });
+
+    // Left boxes slide out
+    gsap.utils.toArray<HTMLElement>('.out-left').forEach((el) => {
+      gsap.to(el, {
+        x: -300,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 80%',
+          end: 'top 20%',
+          scrub: true
+        }
+      });
+    });
+
+    // Right boxes slide out
+    gsap.utils.toArray<HTMLElement>('.out-right').forEach((el) => {
+      gsap.to(el, {
+        x: 300,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 80%',
+          end: 'top 20%',
+          scrub: true
+        }
+      });
+    });
+
 
     // Work section horizontal scroll
     gsap.to('.projects', {
@@ -43,12 +74,13 @@ export class LandingPageComponent implements AfterViewInit {
         anticipatePin: 1
       }
     });
+
   }
 
   onThemeToggle(mode: boolean) {
     this.isDarkMode = mode;
   }
-  
+
   openProject(link: string) {
     window.open(link, '_blank');
   }
