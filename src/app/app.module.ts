@@ -13,7 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { CodePortfolioComponent } from './code-portfolio/code-portfolio.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { StarlightComponent } from './starlight/starlight.component';
+import { StarlightComponent } from './shared/starlight/starlight.component';
 
 @NgModule({
   declarations: [

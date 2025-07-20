@@ -56,6 +56,6 @@ ngOnInit(): void {
       setTimeout(() => {
         this.renderer.removeChild(container, shootingStar);
       }, 2000);
-    }, 4000); // Every 8 seconds
+    }, 4500); 
   }
 }
