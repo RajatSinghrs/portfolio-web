@@ -13,7 +13,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { CodePortfolioComponent } from './code-portfolio/code-portfolio.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { StarlightComponent } from './shared/starlight/starlight.component';
+import { StarlightComponent } from './shared/starfield/starlight.component';
+import { Feature2Component } from './shared/feature-2/feature-2.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { StarlightComponent } from './shared/starlight/starlight.component';
     FooterComponent,
     CodePortfolioComponent,
     StarlightComponent,
+    Feature2Component,
   ],
   imports: [
     BrowserModule,

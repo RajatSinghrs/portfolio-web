@@ -20,7 +20,7 @@
     .star,
     .twinkle-star::before,
     .twinkle-star::after {
-      background: #888; // softer color for stars
+      background: #888; 
       filter: drop-shadow(0 0 3px #bbb);
     }
 
