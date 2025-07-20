@@ -1,0 +1,44 @@
+.starfield {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+
+  &.dark {
+    background: #000;
+  }
+
+  &.light {
+    background: #f5f5f5;
+  }
+
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: twinkle ease-in-out infinite alternate;
+  }
+
+  @keyframes twinkle {
+    0% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1.5);
+    }
+  }
+}
+
+.starfield.light .star {
+  background: rgba(120, 120, 120, 0.6);
+  box-shadow: 0 0 3px rgba(120, 120, 120, 0.4);
+}
