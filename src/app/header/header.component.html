@@ -1,6 +1,11 @@
 <header class="header" [class.scrolled]="isScrolled">
   <div class="header-content">
-    <div class="logo" (click)="scrollToTop()">RS</div>
+    <div #moonWrapper class="logo-wrapper moon" [class.dark]="isDarkMode" [class.light]="!isDarkMode"
+      (click)="scrollToTop()">
+      <span class="logo">RS.</span>
+      <div class="crater" *ngFor="let _ of [1,2,3]"></div>
+    </div>
+
     <nav>
       <ul>
         <li (click)="scrollTo('about')">About</li>
