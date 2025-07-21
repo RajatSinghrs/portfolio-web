@@ -5,7 +5,6 @@
       <ul>
         <li (click)="scrollTo('about')">About</li>
         <li (click)="scrollTo('work')">Work</li>
-        <!-- <li (click)="scrollTo('services')">Services</li> -->
         <li (click)="scrollTo('tech')">Tech Stack</li>
         <li (click)="scrollTo('resume')">Resume</li>
         <li (click)="scrollTo('contact')">Contact</li>
@@ -13,7 +12,7 @@
     </nav>
     <div class="right-actions">
       <button class="theme-toggle" (click)="toggleTheme()">
-        {{ isDarkMode ? '☀️ Light' : '🌙 Dark' }}
+        {{ isDarkMode ? '☀️' : '🌙' }}
       </button>
       <mat-icon class="code-icon" *ngIf="!isCodedPortfolio" (click)="openCodePortfolio()">code</mat-icon>
       <mat-icon class="code-icon" *ngIf="isCodedPortfolio" (click)="goHome()">library_books</mat-icon>
