@@ -6,8 +6,7 @@
   padding: 16px 0;
   transition: background 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
   backdrop-filter: blur(10px) saturate(180%);
-  -webkit-backdrop-filter: blur(10px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  // -webkit-backdrop-filter: blur(10px) saturate(180%);
   box-shadow: none;
     background: rgba(255, 255, 255, 0);
 
@@ -16,7 +15,6 @@
 .header.scrolled {
   background: rgba(255, 255, 255, 0.4);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .header-content {
