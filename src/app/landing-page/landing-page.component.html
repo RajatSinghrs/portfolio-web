@@ -1,25 +1,27 @@
+<app-starlight [isDarkMode]="isDarkMode"></app-starlight>
+
 <app-header [isDarkMode]="isDarkMode" (themeToggled)="onThemeToggle($event)" [isCodedPortfolio]="false"></app-header>
 
 <main class="sections">
 
-<section id="about">
-  <div class="about-layout">
-    <div class="column left">
-      <div class="square-box out-left" *ngFor="let box of leftBoxes"></div>
-    </div>
-    <div class="center-content">
-      <h2>Hello there !
-      <span class="wave">👋</span>
-      </h2>
-      <h1>I'm Rajat Singh</h1>
-      <p>Curious web designer and developer based in Gurugram, India.</p>
-    </div>
+  <section id="about">
+    <div class="about-layout">
+      <div class="column left">
+        <div class="square-box out-left" *ngFor="let box of leftBoxes"></div>
+      </div>
+      <div class="center-content">
+        <h2>Hello there !
+          <span class="wave">👋</span>
+        </h2>
+        <h1>I'm Rajat Singh</h1>
+        <p>Curious web designer and developer based in Gurugram, India.</p>
+      </div>
 
-    <div class="column right">
-      <div class="square-box out-right" *ngFor="let box of rightBoxes"></div>
+      <div class="column right">
+        <div class="square-box out-right" *ngFor="let box of rightBoxes"></div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
   <section id="work" class="horizontal-scroll">
@@ -30,11 +32,31 @@
     </div>
   </section>
 
-  <section id="services"><h2>Services</h2></section>
-  <section id="tech"><h2>Tech Stack</h2></section>
-  <section id="resume"><h2>Resume</h2></section>
-  <section id="contact"><h2>Contact</h2></section>
+  <section id="services">
+    <h2>Services</h2>
+  </section>
+  <section id="tech">
+    <h2>Tech Stack</h2>
+  </section>
+  <!-- <section id="resume"><h2>Resume</h2></section> -->
+  <section id="resume" class="resume-section">
+    <h2>Resume</h2>
+    <div class="resume-panel" *ngFor="let section of resumeSections" #resumePanel>
+      <div class="resume-header" (click)="toggleSection(section, resumePanel)">
+        <h3>{{ section.title }}</h3>
+        <span class="toggle-icon">{{ section.open ? '-' : '+' }}</span>
+      </div>
+      <div class="resume-content" [style.overflow]="'hidden'">
+        <ul>
+          <li *ngFor="let item of section.items">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+  </section>
 </main>
 
 <app-footer [isDarkMode]="isDarkMode"></app-footer>
-

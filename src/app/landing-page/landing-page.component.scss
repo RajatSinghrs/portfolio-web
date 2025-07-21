@@ -14,7 +14,7 @@ body {
   section {
     min-height: 100vh;
     padding: 2rem;
-    border-bottom: 1px solid #ccc;
+    // border-bottom: 1px solid #ccc;
 
     h2 {
       font-size: 2rem;
@@ -37,13 +37,13 @@ body {
     display: flex;
     gap: 4rem;
     width: fit-content;
-    padding: 64px 32px 64px 32px;
+    padding: 0 32px;
 
     .project {
       background: var(--project-bg);
       color: var(--text-color);
-      min-width: 500px;
-      height: 600px;
+      min-width: 380px;
+      height: 480px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -115,3 +115,52 @@ body {
   font-size: 18px;
 }
 
+
+// resume
+.resume-section {
+  padding: 4rem 2rem;
+
+  .resume-panel {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .resume-header {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .resume-content {
+      padding: 0 1rem;
+      overflow: hidden;
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          padding: 0.5rem 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+
+    .toggle-icon {
+      font-size: 1.5rem;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+.starfield {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+
+  // 🌙 Dark mode background
+  &.dark {
+    background: #000;
+  }
+
+  // ☀️ Light mode background
+  &.light {
+    background: #f0f0f0;
+
+    .star,
+    .twinkle-star::before,
+    .twinkle-star::after {
+      background: #888; 
+      filter: drop-shadow(0 0 3px #bbb);
+    }
+
+    .shooting-star {
+      background: linear-gradient(90deg, #aaa, transparent);
+    }
+  }
+
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: twinkle ease-in-out infinite alternate;
+  }
+
+  @keyframes twinkle {
+    0% { opacity: 0.3; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.5); }
+  }
+
+  .twinkle-star {
+    width: 6px;
+    height: 6px;
+    background: transparent;
+    position: absolute;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background: white;
+      opacity: 0.8;
+      border-radius: 1px;
+    }
+
+    &::before {
+      width: 6px;
+      height: 1px;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      width: 1px;
+      height: 6px;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    animation: sparkle 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes sparkle {
+    0% { opacity: 0.5; transform: scale(0.9) rotate(0deg); }
+    100% { opacity: 1; transform: scale(1.3) rotate(45deg); }
+  }
+
+  .shooting-star {
+    position: absolute;
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(90deg, white, transparent);
+    opacity: 0.8;
+    transform: rotate(-45deg);
+    animation: shoot 1.5s ease-out forwards;
+  }
+
+  @keyframes shoot {
+    0% {
+      transform: translateX(0) translateY(0) rotate(-45deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(300px) translateY(100px) rotate(-45deg);
+      opacity: 0;
+    }
+  }
+}
