@@ -14,7 +14,7 @@ body {
   section {
     min-height: 100vh;
     padding: 2rem;
-    border-bottom: 1px solid #ccc;
+    // border-bottom: 1px solid #ccc;
 
     h2 {
       font-size: 2rem;
@@ -37,13 +37,13 @@ body {
     display: flex;
     gap: 4rem;
     width: fit-content;
-    padding: 64px 32px 64px 32px;
+    padding: 0 32px;
 
     .project {
       background: var(--project-bg);
       color: var(--text-color);
-      min-width: 500px;
-      height: 600px;
+      min-width: 380px;
+      height: 480px;
       display: flex;
       align-items: center;
       justify-content: center;
