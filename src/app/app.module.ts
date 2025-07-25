@@ -15,6 +15,7 @@ import { CodePortfolioComponent } from './code-portfolio/code-portfolio.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StarlightComponent } from './shared/starfield/starlight.component';
 import { Feature2Component } from './shared/feature-2/feature-2.component';
+import { TypewriterModule } from 'typewriter-text-angular';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { Feature2Component } from './shared/feature-2/feature-2.component';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TypewriterModule
   ],
   providers: [
     provideClientHydration(),

@@ -14,7 +14,28 @@
           <span class="wave">👋</span>
         </h2>
         <h1>I'm Rajat Singh</h1>
-        <p>Curious web designer and developer based in Gurugram, India.</p>
+        <!-- <p>Curious web designer and developer based in Gurugram, India.</p> -->
+        <!-- <div [typewriter]="[
+    'Standalone App Demo',
+    'Typing with Style 🧑‍💻',
+    'Reusable Angular Directive!'
+  ]" [speed]="100" [deleteSpeed]="50" [delayBetween]="1000" [pauseBetweenLoops]="2000" [loop]="true" [cursor]="true"
+    [cursorChar]="'❚'" [startDelay]="500" [pauseOnHover]="true" [randomSpeed]="true" [autoStart]="true"
+    [textStyleClass]="'typewriter-text-style'"></div> -->
+        <!-- 
+     <span 
+    typewriter 
+    [typewriter]="['fullstack developer', 'freelancer', 'football player']" 
+    [loop]="true"
+    [cursor]="'|'"
+    [typingSpeed]="80"
+    [deletingSpeed]="40"
+    [delayBeforeDelete]="1000"
+  ></span>  -->
+
+        <span typewriter [typewriter]="['fullstack developer', 'freelancer', 'football player']" [loop]="true"
+          [speed]="80" [deleteSpeed]="40" [delayBetween]="1000" [cursor]="true" cursorChar="|"
+          [pauseOnHover]="true"></span>
       </div>
 
       <div class="column right">
