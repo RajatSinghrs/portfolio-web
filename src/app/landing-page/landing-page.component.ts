@@ -37,15 +37,6 @@ export class LandingPageComponent implements AfterViewInit {
   isDarkMode = false;
   leftBoxes = new Array(3);
   rightBoxes = new Array(3);
-  //    typewriterOptions = {
-  //   text: ['Standalone Angular FTW!', 'Typewriter Works!'],
-  //   speed: 80,
-  //   deleteSpeed: 40,
-  //   delayBetween: 1000,
-  //   loop: true,
-  //   cursor: true,
-  // };
-
   projects = [
     { title: 'Project 1', link: 'https://example.com/project1' },
     { title: 'Project 2', link: 'https://example.com/project2' },
