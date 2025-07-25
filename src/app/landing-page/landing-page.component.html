@@ -14,7 +14,9 @@
           <span class="wave">👋</span>
         </h2>
         <h1>I'm Rajat Singh</h1>
-        <p>Curious web designer and developer based in Gurugram, India.</p>
+        <span typewriter [typewriter]="['fullstack developer', 'freelancer', 'football player']" [loop]="true"
+          [speed]="80" [deleteSpeed]="40" [delayBetween]="1000" [cursor]="true" cursorChar="|"
+          [pauseOnHover]="true"></span>
       </div>
 
       <div class="column right">
@@ -33,14 +35,10 @@
     </div>
   </section>
 
-  <!-- <section id="services">
-    <h2>Services</h2>
-  </section> -->
-
   <section id="tech">
     <h2>Tech Stack</h2>
   </section>
-  <!-- <section id="resume"><h2>Resume</h2></section> -->
+
   <section id="resume" class="resume-section">
     <h2>Resume</h2>
     <div class="resume-panel" *ngFor="let section of resumeSections" #resumePanel>

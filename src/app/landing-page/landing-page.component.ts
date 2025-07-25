@@ -37,7 +37,6 @@ export class LandingPageComponent implements AfterViewInit {
   isDarkMode = false;
   leftBoxes = new Array(3);
   rightBoxes = new Array(3);
-
   projects = [
     { title: 'Project 1', link: 'https://example.com/project1' },
     { title: 'Project 2', link: 'https://example.com/project2' },

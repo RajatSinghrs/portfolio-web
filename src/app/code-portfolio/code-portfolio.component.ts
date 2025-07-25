@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './code-portfolio.component.scss'
 })
 export class CodePortfolioComponent {
- isDarkMode = false; // Adjust if you have global dark mode or use a service
+ isDarkMode = false; 
  portfolioItems = [
     {
       title: 'Awesome Project',
@@ -18,7 +18,7 @@ export class CodePortfolioComponent {
       description: 'This is another cool app description.',
       github: 'https://github.com/yourrepo/another'
     }
-    // ...add more items
+   
   ];
 
   onThemeToggle(newMode: boolean) {
