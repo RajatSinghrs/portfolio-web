@@ -1,7 +1,10 @@
-// header.component.ts
 import { Component, Input, Output, EventEmitter, HostListener, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import anime from 'animejs/lib/anime.es.js';
+import gsap from 'gsap';
+import ScrollToPlugin from 'gsap/ScrollToPlugin';
+
+gsap.registerPlugin(ScrollToPlugin);
 
 @Component({
   selector: 'app-header',
@@ -188,7 +191,6 @@ export class HeaderComponent implements AfterViewInit {
   }
 
   scrollTo(sectionId: string) {
-    // Keep your existing GSAP scroll function or replace with anime.js if preferred
     anime({
       targets: document.scrollingElement || document.documentElement,
       scrollTop: document.getElementById(sectionId)?.offsetTop! - 80,

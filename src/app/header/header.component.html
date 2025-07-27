@@ -16,9 +16,7 @@
       </ul>
     </nav>
     <div class="right-actions">
-      <!-- <button class="theme-toggle" (click)="toggleTheme()">
-        {{ isDarkMode ? '☀️' : '🌙' }}
-      </button> -->
+
       <div class="theme-toggle-wrapper">
         <button #themeToggle class="theme-toggle animated-toggle" (click)="toggleTheme()" [class.dark]="isDarkMode"
           [disabled]="isAnimating">
@@ -33,7 +31,6 @@
           </div>
         </button>
 
-        <!-- Particle container for explosion effect -->
         <div #particleContainer class="particle-container"></div>
       </div>
       <mat-icon class="code-icon" *ngIf="!isCodedPortfolio" (click)="openCodePortfolio()">code</mat-icon>
