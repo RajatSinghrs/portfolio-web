@@ -16,9 +16,23 @@
       </ul>
     </nav>
     <div class="right-actions">
-      <button class="theme-toggle" (click)="toggleTheme()">
-        {{ isDarkMode ? '☀️' : '🌙' }}
-      </button>
+
+      <div class="theme-toggle-wrapper">
+        <button #themeToggle class="theme-toggle animated-toggle" (click)="toggleTheme()" [class.dark]="isDarkMode"
+          [disabled]="isAnimating">
+
+          <div class="toggle-track">
+            <div #toggleSlider class="toggle-slider">
+              <div class="slider-content">
+                <span #sunIcon class="icon sun-icon" [class.active]="!isDarkMode">☀️</span>
+                <span #moonIcon class="icon moon-icon" [class.active]="isDarkMode">🌙</span>
+              </div>
+            </div>
+          </div>
+        </button>
+
+        <div #particleContainer class="particle-container"></div>
+      </div>
       <mat-icon class="code-icon" *ngIf="!isCodedPortfolio" (click)="openCodePortfolio()">code</mat-icon>
       <mat-icon class="code-icon" *ngIf="isCodedPortfolio" (click)="goHome()">library_books</mat-icon>
     </div>

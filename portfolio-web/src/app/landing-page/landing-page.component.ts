@@ -85,7 +85,6 @@ export class LandingPageComponent implements AfterViewInit {
         });
       });
 
-
       // Work section horizontal scroll
       gsap.to('.projects', {
         xPercent: -100,
@@ -99,6 +98,7 @@ export class LandingPageComponent implements AfterViewInit {
           anticipatePin: 1
         }
       });
+
       this.resumePanels.forEach((panel, index) => {
         gsap.from(panel.nativeElement, {
           opacity: 0,
