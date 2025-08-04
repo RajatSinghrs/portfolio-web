@@ -11,8 +11,8 @@ export class ContactService {
   constructor(private http: HttpClient) {
   }
 
-     submitContact(data: { name: string; email: string; message: string }) {
+  submitContact(data: { name: string; email: string; message: string }) {
     return this.http.post(this.API, data);
   }
-  
+
 }
