@@ -322,3 +322,27 @@ nav li {
   backface-visibility: hidden;
   transform-style: preserve-3d;
 }
+
+
+/////
+/// auth button 
+/// 
+
+.auth-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding: 8px 16px;
+
+  button {
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.611);
+    }
+  }
+}

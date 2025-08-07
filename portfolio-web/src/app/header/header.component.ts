@@ -1,8 +1,9 @@
-import { Component, Input, Output, EventEmitter, HostListener, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, HostListener, ElementRef, ViewChild, AfterViewInit, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import anime from 'animejs/lib/anime.es.js';
 import gsap from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
+import { AuthService } from '../services/auth.service';
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -11,7 +12,8 @@ gsap.registerPlugin(ScrollToPlugin);
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements AfterViewInit {
+export class HeaderComponent implements AfterViewInit, OnInit {
+  isLoggedIn = false;
   @Input() isDarkMode = false;
   @Output() themeToggled = new EventEmitter<boolean>();
   @Input() isCodedPortfolio: boolean = false;
@@ -24,7 +26,11 @@ export class HeaderComponent implements AfterViewInit {
   isScrolled = false;
   isAnimating = false;
 
-  constructor(private router: Router) { }
+  constructor(public router: Router, private auth: AuthService) { }
+
+  ngOnInit(): void {
+    this.isLoggedIn = this.auth.isLoggedIn();
+  }
 
   ngAfterViewInit() {
     // Initialize the toggle position
@@ -215,4 +221,16 @@ export class HeaderComponent implements AfterViewInit {
   goHome() {
     this.router.navigate(['/']);
   }
+
+  logout() {
+    this.auth.logout();
+    this.isLoggedIn = false;
+  }
+  goToLogin() {
+  this.router.navigate(['/login']);
+}
+
+goToSignup() {
+  this.router.navigate(['/signup']);
+}
 }

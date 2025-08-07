@@ -38,11 +38,10 @@
       <mat-icon class="code-icon" *ngIf="isCodedPortfolio" (click)="goHome()">library_books</mat-icon>
     </div>
 
-            <div>
-
-        <button class="" >Login</button>
-        <button class="" >Signup</button>
-        </div>
+    <div *ngIf="!isLoggedIn" class="auth-buttons">
+  <button mat-button (click)="goToLogin()">Login</button>
+  <button mat-button (click)="goToSignup()">Signup</button>
+</div>
 
   </div>
 </header>
