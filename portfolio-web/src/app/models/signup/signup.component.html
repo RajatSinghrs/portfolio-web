@@ -1,0 +1,14 @@
+<div class="signup-container">
+  <h2>Create Account</h2>
+
+  <form (submit)="onSignup(); $event.preventDefault()">
+    <input type="text" placeholder="Name" [(ngModel)]="name" name="name" required />
+    <input type="email" placeholder="Email" [(ngModel)]="email" name="email" required />
+    <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required />
+
+    <button type="submit">Sign Up</button>
+
+    <div *ngIf="error" class="error">{{ error }}</div>
+    <div *ngIf="success" class="success">Signup successful!</div>
+  </form>
+</div>
