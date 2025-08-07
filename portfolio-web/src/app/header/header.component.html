@@ -38,15 +38,9 @@
       <mat-icon class="code-icon" *ngIf="isCodedPortfolio" (click)="goHome()">library_books</mat-icon>
     </div>
 
-          <div *ngIf="!isLoggedIn" class="auth-buttons">
-  <!-- <button (click)="router.navigate(['/login'])">Login</button>
-  <button (click)="router.navigate(['/signup'])">Signup</button> -->
-  <!-- change auth to private constructor -->
-   
-  <button (click)="goToLogin()">Login</button>
-  <button (click)="goToSignup()">Signup</button>
-
-
+    <div *ngIf="!isLoggedIn" class="auth-buttons">
+  <button mat-button (click)="goToLogin()">Login</button>
+  <button mat-button (click)="goToSignup()">Signup</button>
 </div>
 
   </div>
