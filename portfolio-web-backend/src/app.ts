@@ -11,12 +11,6 @@ const app = express();
 dotenv.config();
 
 // app.use(cors());
-// app.use(express.json());
-
-// app.use('/api/contact', contactRoutes);
-// app.use('/api/feedback', feedbackRoutes);
-// app.use('/api/auth', authRoutes);
-
 app.use(cors({ origin: ENV.FRONTEND_URL }));
 app.use(express.json());
 
