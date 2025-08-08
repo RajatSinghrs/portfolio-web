@@ -4,8 +4,6 @@ import jwt from 'jsonwebtoken';
 import User from '../models/user.model';
 import { ENV } from '../config/env';
 
-// const JWT_SECRET = process.env.JWT_SECRET || 'secret';
-
 export const signup = async (req: Request, res: Response) => {
   const { name, email, password } = req.body;
 
