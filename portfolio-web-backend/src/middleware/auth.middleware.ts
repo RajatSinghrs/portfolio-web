@@ -6,7 +6,8 @@ export const authenticate = (req: Request, res: Response, next: NextFunction) =>
   const authHeader = req.headers.authorization;
 
   if (!authHeader?.startsWith('Bearer ')) {
-    return res.status(401).json({ message: 'Unauthorized' });
+    res.status(401);
+    throw new Error('Unauthorized');
   }
 
   const token = authHeader.split(' ')[1];
@@ -15,7 +16,8 @@ export const authenticate = (req: Request, res: Response, next: NextFunction) =>
     const decoded = jwt.verify(token, ENV.JWT_SECRET) as { userId: string };
     (req as any).user = decoded;
     next();
-  } catch (err) {
-    res.status(401).json({ message: 'Invalid token' });
+  } catch {
+    res.status(401);
+    throw new Error('Invalid token');
   }
 };
