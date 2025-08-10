@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-export const ENV = {  
+export const ENV = {
   PORT: process.env.PORT || 5000,
   MONGODB_URI: process.env.MONGODB_URI || '',
   JWT_SECRET: process.env.JWT_SECRET || 'secret',
@@ -9,5 +9,10 @@ export const ENV = {
   // google client secrets env
   GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID || '',
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET || '',
-  GOOGLE_CALLBACK_URL: process.env.GOOGLE_CALLBACK_URL || 'http://localhost:5000/api/auth/google/callback'
+  GOOGLE_CALLBACK_URL: process.env.GOOGLE_CALLBACK_URL || 'http://localhost:5000/api/auth/google/callback',
+  // github client secrets env
+  GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID || '',
+  GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET || '',
+  GITHUB_CALLBACK_URL: process.env.GITHUB_CALLBACK_URL || 'http://localhost:5000/api/auth/github/callback',
+
 };
