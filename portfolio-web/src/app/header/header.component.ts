@@ -4,6 +4,7 @@ import anime from 'animejs/lib/anime.es.js';
 import gsap from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import { AuthService } from '../services/auth.service';
+import { Subscription } from 'rxjs';
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -25,16 +26,30 @@ export class HeaderComponent implements AfterViewInit, OnInit {
 
   isScrolled = false;
   isAnimating = false;
+  private sub!: Subscription;
 
   constructor(public router: Router, private auth: AuthService) { }
 
-  ngOnInit(): void {
-    this.isLoggedIn = this.auth.isLoggedIn();
+  // ngOnInit(): void {
+  //   this.isLoggedIn = this.auth.isLoggedIn();
+  //   window.addEventListener('storage', () => {
+  //     this.isLoggedIn = this.auth.isLoggedIn();
+  //   });
+  // }
+
+    ngOnInit(): void {
+    this.sub = this.auth.authStatus$.subscribe(status => {
+      this.isLoggedIn = status;
+    });
   }
 
   ngAfterViewInit() {
     // Initialize the toggle position
     this.updateTogglePosition(false);
+  }
+  
+   ngOnDestroy() {
+    if (this.sub) this.sub.unsubscribe();
   }
 
   @HostListener('window:scroll', [])
@@ -224,13 +239,14 @@ export class HeaderComponent implements AfterViewInit, OnInit {
 
   logout() {
     this.auth.logout();
-    this.isLoggedIn = false;
+    // this.isLoggedIn = false;
+    this.router.navigate(['/']);
   }
   goToLogin() {
-  this.router.navigate(['/login']);
-}
+    this.router.navigate(['/login']);
+  }
 
-goToSignup() {
-  this.router.navigate(['/signup']);
-}
+  goToSignup() {
+    this.router.navigate(['/signup']);
+  }
 }

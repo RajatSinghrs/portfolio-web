@@ -42,6 +42,9 @@
   <button mat-button (click)="goToLogin()">Login</button>
   <button mat-button (click)="goToSignup()">Signup</button>
 </div>
+<div *ngIf="isLoggedIn" class="auth-buttons">
+  <button mat-button (click)="logout()">Logout</button>
+</div>
 
   </div>
 </header>

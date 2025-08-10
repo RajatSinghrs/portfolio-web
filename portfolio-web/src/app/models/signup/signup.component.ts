@@ -14,14 +14,14 @@ export class SignupComponent {
   error = '';
   success = false;
 
-    constructor(private auth: AuthService, private router: Router) {}
+  constructor(private auth: AuthService, private router: Router) { }
 
-     onSignup() {
+  onSignup() {
     this.auth.signup(this.name, this.email, this.password).subscribe({
-      next: res => {
+      next: (res) => {
         localStorage.setItem('token', res.token);
-        this.success = true;
-        setTimeout(() => this.router.navigate(['/']), 1000);
+        this.router.navigate(['/']);
+        // this.success = true;
       },
       error: err => {
         this.error = err.error.message || 'Signup failed';

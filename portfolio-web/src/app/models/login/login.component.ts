@@ -16,14 +16,17 @@ export class LoginComponent {
 
  onLogin() {
     this.auth.login(this.email, this.password).subscribe({
-      next: res => {
+      next: (res) => {
         localStorage.setItem('token', res.token);
         this.router.navigate(['/']);
       },
-      error: err => {
-        this.error = err.error.message || 'Login failed';
+      error: (err) => {
+        this.error = err.error?.message || 'Login failed';
       }
     });
   }
 
+  loginWithGoogle() {
+    window.location.href = 'http://localhost:5000/api/auth/google';
+  }
 }
