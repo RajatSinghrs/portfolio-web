@@ -13,6 +13,9 @@
   <button class="google-btn" (click)="loginWithGoogle()">
     <img src="assets/google-icon.svg" alt="Google" /> Login with Google
   </button>
+  <button class="github-btn" (click)="loginWithGithub()">
+  <img src="assets/github-icon.svg" alt="GitHub" /> Login with GitHub
+</button>
 
   <div *ngIf="error" class="error">{{ error }}</div>
 </div>
