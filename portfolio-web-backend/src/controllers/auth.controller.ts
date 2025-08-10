@@ -41,7 +41,6 @@ export const login = async (req: Request, res: Response) => {
 
 };
 
-
 export const googleOAuthCallback = asyncHandler(async (req: Request, res: Response) => {
   const user = (req as any).user;
   if (!user) {
@@ -59,4 +58,17 @@ export const googleOAuthCallback = asyncHandler(async (req: Request, res: Respon
   // const redirectUrl = `${ENV.FRONTEND_URL}/`;
 
   res.redirect(redirectUrl);
+});
+
+export const githubOAuthCallback = asyncHandler(async (req: Request, res: Response) => {
+  const user = (req as any).user;
+  if (!user) {
+    res.status(400);
+    throw new Error('GitHub auth failed: no user returned');
+  }
+
+  const token = jwt.sign({ userId: user._id }, ENV.JWT_SECRET, { expiresIn: '1d' });
+
+  // Redirect to frontend route that reads token from fragment (your existing OAuth redirect)
+  res.redirect(`${ENV.FRONTEND_URL}/oauth2/redirect#token=${token}`);
 });

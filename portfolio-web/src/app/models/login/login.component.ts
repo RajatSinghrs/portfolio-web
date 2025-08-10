@@ -29,4 +29,8 @@ export class LoginComponent {
   loginWithGoogle() {
     window.location.href = 'http://localhost:5000/api/auth/google';
   }
+
+  loginWithGithub() {
+  window.location.href = 'http://localhost:5000/api/auth/github';
+}
 }
