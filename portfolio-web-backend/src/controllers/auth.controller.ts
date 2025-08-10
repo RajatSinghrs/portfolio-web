@@ -3,6 +3,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import User from '../models/user.model';
 import { ENV } from '../config/env';
+import { asyncHandler } from '../utils/asyncHandler';
 
 export const signup = async (req: Request, res: Response) => {
   const { name, email, password } = req.body;
@@ -39,3 +40,23 @@ export const login = async (req: Request, res: Response) => {
   res.status(200).json({ token, user: { name: user.name, email: user.email } });
 
 };
+
+
+export const googleOAuthCallback = asyncHandler(async (req: Request, res: Response) => {
+  const user = (req as any).user;
+  if (!user) {
+    res.status(400);
+    throw new Error('Google auth failed: no user returned');
+  }
+  
+  const token = jwt.sign({ userId: user._id }, ENV.JWT_SECRET, { expiresIn: '1d' });
+
+  // Option A: redirect to frontend route that will read token from fragment
+  const redirectUrl = `${ENV.FRONTEND_URL}/oauth2/redirect#token=${token}`;
+
+    // Option B (alternate): set httpOnly cookie (safer) and redirect - for better quality in production
+  // res.cookie('token', token, { httpOnly: true, secure: process.env.NODE_ENV === 'production' });
+  // const redirectUrl = `${ENV.FRONTEND_URL}/`;
+
+  res.redirect(redirectUrl);
+});

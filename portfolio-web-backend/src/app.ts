@@ -6,9 +6,13 @@ import feedbackRoutes from './routes/feedback.routes';
 import authRoutes from './routes/auth.routes';
 import { ENV } from './config/env';
 import { errorHandler } from './middleware/error.middleware';
+import passport from './config/passport';
 
 const app = express();
 dotenv.config();
+
+app.use(passport.initialize());
+
 
 // app.use(cors());
 app.use(cors({ origin: ENV.FRONTEND_URL }));
