@@ -11,7 +11,7 @@ router.post('/signup', asyncHandler(signup));
 router.post('/login', asyncHandler(login));
 
 // Start OAuth flow
-router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'], prompt: "select_account" }));
 
 // Callback endpoint Google redirects to
 router.get('/google/callback',
