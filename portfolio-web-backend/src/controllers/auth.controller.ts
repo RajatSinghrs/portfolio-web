@@ -48,13 +48,13 @@ export const googleOAuthCallback = asyncHandler(async (req: Request, res: Respon
     res.status(400);
     throw new Error('Google auth failed: no user returned');
   }
-  
+
   const token = jwt.sign({ userId: user._id }, ENV.JWT_SECRET, { expiresIn: '1d' });
 
   // Option A: redirect to frontend route that will read token from fragment
   const redirectUrl = `${ENV.FRONTEND_URL}/oauth2/redirect#token=${token}`;
 
-    // Option B (alternate): set httpOnly cookie (safer) and redirect - for better quality in production
+  // Option B (alternate): set httpOnly cookie (safer) and redirect - for better quality in production
   // res.cookie('token', token, { httpOnly: true, secure: process.env.NODE_ENV === 'production' });
   // const redirectUrl = `${ENV.FRONTEND_URL}/`;
 
