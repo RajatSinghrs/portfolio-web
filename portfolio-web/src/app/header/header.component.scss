@@ -22,8 +22,45 @@
   align-items: center;
   margin: 0 auto;
   flex-wrap: wrap;
-  padding: 0 32px;
+  padding: 0 12px;
+  width: 100%;
 }
+
+.header-left,
+.header-center,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.header-center {
+  flex: 2;
+  justify-content: center;
+}
+
+.header-center ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.header-center li {
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header-right {
+  flex: 1;
+  justify-content: flex-end;
+  gap: 16px;
+} 
 
 .code-icon {
   font-size: 24px;
@@ -151,8 +188,8 @@ nav li {
 }
 
 .theme-toggle-wrapper {
-  position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
 }
 
 .particle-container {
@@ -330,9 +367,9 @@ nav li {
 
 .auth-buttons {
   display: flex;
-  gap: 12px;
+    align-items: center;
   justify-content: flex-end;
-  padding: 8px 16px;
+  padding: 0 12px;
 
   button {
     font-weight: 600;

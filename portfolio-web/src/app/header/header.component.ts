@@ -30,14 +30,7 @@ export class HeaderComponent implements AfterViewInit, OnInit {
 
   constructor(public router: Router, private auth: AuthService) { }
 
-  // ngOnInit(): void {
-  //   this.isLoggedIn = this.auth.isLoggedIn();
-  //   window.addEventListener('storage', () => {
-  //     this.isLoggedIn = this.auth.isLoggedIn();
-  //   });
-  // }
-
-    ngOnInit(): void {
+  ngOnInit(): void {
     this.sub = this.auth.authStatus$.subscribe(status => {
       this.isLoggedIn = status;
     });
@@ -47,8 +40,8 @@ export class HeaderComponent implements AfterViewInit, OnInit {
     // Initialize the toggle position
     this.updateTogglePosition(false);
   }
-  
-   ngOnDestroy() {
+
+  ngOnDestroy() {
     if (this.sub) this.sub.unsubscribe();
   }
 
@@ -212,12 +205,25 @@ export class HeaderComponent implements AfterViewInit, OnInit {
   }
 
   scrollTo(sectionId: string) {
+      const el = document.getElementById(sectionId);
+  if (!el) return;
+
+  const top = el.getBoundingClientRect().top + window.scrollY;
+
+  // Only subtract header height if the section's own padding isn't enough
+  // const headerHeight = 180;
+  // const finalTop = top - (sectionId === 'work' ? headerHeight : headerHeight );
+
+
     anime({
       targets: document.scrollingElement || document.documentElement,
-      scrollTop: document.getElementById(sectionId)?.offsetTop! - 80,
+      scrollTop:  top,
       duration: 1000,
       easing: 'easeOutQuad'
+      
     });
+    console.log(sectionId, document.getElementById(sectionId)?.offsetTop);
+
   }
 
   scrollToTop() {
@@ -239,7 +245,6 @@ export class HeaderComponent implements AfterViewInit, OnInit {
 
   logout() {
     this.auth.logout();
-    // this.isLoggedIn = false;
     this.router.navigate(['/']);
   }
   goToLogin() {

@@ -1,26 +1,34 @@
 <header class="header" [class.scrolled]="isScrolled">
   <div class="header-content">
-    <div #moonWrapper class="logo-wrapper moon" [class.dark]="isDarkMode" [class.light]="!isDarkMode"
-      (click)="scrollToTop()">
-      <span class="logo">RS.</span>
-      <div class="crater" *ngFor="let _ of [1,2,3]"></div>
+
+    <!-- LEFT -->
+    <div class="header-left">
+      <div #moonWrapper class="logo-wrapper moon"
+           [class.dark]="isDarkMode" [class.light]="!isDarkMode"
+           (click)="scrollToTop()">
+        <span class="logo">RS.</span>
+        <div class="crater" *ngFor="let _ of [1,2,3]"></div>
+      </div>
     </div>
 
-    <nav>
+    <!-- CENTER -->
+    <nav class="header-center">
       <ul>
         <li (click)="scrollTo('about')">About</li>
-        <li (click)="scrollTo('work')">Work</li>
+        <li (click)="scrollTo('work')">Projects</li>
         <li (click)="scrollTo('tech')">Tech Stack</li>
         <li (click)="scrollTo('resume')">Resume</li>
         <li (click)="scrollTo('contact')">Contact</li>
       </ul>
     </nav>
-    <div class="right-actions">
 
+    <!-- RIGHT -->
+    <div class="header-right">
       <div class="theme-toggle-wrapper">
-        <button #themeToggle class="theme-toggle animated-toggle" (click)="toggleTheme()" [class.dark]="isDarkMode"
-          [disabled]="isAnimating">
-
+        <button #themeToggle class="theme-toggle animated-toggle"
+                (click)="toggleTheme()"
+                [class.dark]="isDarkMode"
+                [disabled]="isAnimating">
           <div class="toggle-track">
             <div #toggleSlider class="toggle-slider">
               <div class="slider-content">
@@ -30,21 +38,20 @@
             </div>
           </div>
         </button>
-
         <div #particleContainer class="particle-container"></div>
-
       </div>
+
       <mat-icon class="code-icon" *ngIf="!isCodedPortfolio" (click)="openCodePortfolio()">code</mat-icon>
       <mat-icon class="code-icon" *ngIf="isCodedPortfolio" (click)="goHome()">library_books</mat-icon>
-    </div>
 
-    <div *ngIf="!isLoggedIn" class="auth-buttons">
-  <button mat-button (click)="goToLogin()">Login</button>
-  <button mat-button (click)="goToSignup()">Signup</button>
-</div>
-<div *ngIf="isLoggedIn" class="auth-buttons">
-  <button mat-button (click)="logout()">Logout</button>
-</div>
+      <div class="auth-buttons" *ngIf="!isLoggedIn">
+        <button mat-button (click)="goToLogin()">Login</button>
+        <button mat-button (click)="goToSignup()">Signup</button>
+      </div>
+      <div class="auth-buttons" *ngIf="isLoggedIn">
+        <button mat-button (click)="logout()">Logout</button>
+      </div>
+    </div>
 
   </div>
 </header>
