@@ -43,20 +43,28 @@
 
       <div class="auth-buttons" *ngIf="!isLoggedIn">
         <ng-container *ngIf="isDarkMode; else lightLogin">
-          <button mat-flat-button class="login" (click)="goToLogin()">Login</button>
+          <button mat-flat-button class="login" (click)="goToLogin()">
+            <span [class.text-black]="isDarkMode" [class.text-white]="!isDarkMode">Login</span>
+          </button>
         </ng-container>
         <ng-template #lightLogin>
-          <button mat-button class="login" (click)="goToLogin()">Login</button>
+          <button mat-button class="login" (click)="goToLogin()">
+            <span [class.text-black]="!isDarkMode" [class.text-white]="isDarkMode">Login</span>
+          </button>
         </ng-template>
 
         <ng-container *ngIf="!isDarkMode; else lightSignup">
-          <button mat-flat-button class="signup" (click)="goToSignup()">Signup</button>
+          <button mat-flat-button class="signup" (click)="goToSignup()">
+            <span [class.text-black]="isDarkMode" [class.text-white]="!isDarkMode">Signup</span>
+          </button>
         </ng-container>
         <ng-template #lightSignup>
-          <button mat-button class="signup" (click)="goToSignup()">Signup</button>
+          <button mat-button class="signup" (click)="goToSignup()">
+            <span [class.text-black]="!isDarkMode" [class.text-white]="isDarkMode">Signup</span>
+          </button>
         </ng-template>
       </div>
-      
+
       <div class="auth-buttons" *ngIf="isLoggedIn">
         <button mat-button (click)="logout()">Logout</button>
       </div>
