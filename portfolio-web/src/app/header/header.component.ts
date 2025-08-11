@@ -205,22 +205,22 @@ export class HeaderComponent implements AfterViewInit, OnInit {
   }
 
   scrollTo(sectionId: string) {
-      const el = document.getElementById(sectionId);
-  if (!el) return;
+    const el = document.getElementById(sectionId);
+    if (!el) return;
 
-  const top = el.getBoundingClientRect().top + window.scrollY;
+    const top = el.getBoundingClientRect().top + window.scrollY;
 
-  // Only subtract header height if the section's own padding isn't enough
-  // const headerHeight = 180;
-  // const finalTop = top - (sectionId === 'work' ? headerHeight : headerHeight );
+    // Only subtract header height if the section's own padding isn't enough
+    // const headerHeight = 180;
+    // const finalTop = top - (sectionId === 'work' ? headerHeight : headerHeight );
 
 
     anime({
       targets: document.scrollingElement || document.documentElement,
-      scrollTop:  top,
+      scrollTop: top,
       duration: 1000,
       easing: 'easeOutQuad'
-      
+
     });
     console.log(sectionId, document.getElementById(sectionId)?.offsetTop);
 

@@ -3,7 +3,7 @@
   top: 0;
   width: 100%;
   z-index: 999;
-  padding: 4px 0;
+  padding: 6px;
   transition: background 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
   backdrop-filter: blur(10px) saturate(180%);
   box-shadow: none;
@@ -20,10 +20,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
   flex-wrap: wrap;
-  padding: 0 12px;
-  width: 100%;
 }
 
 .header-left,
@@ -60,31 +57,15 @@
   flex: 1;
   justify-content: flex-end;
   gap: 16px;
-} 
+}
 
 .code-icon {
   font-size: 24px;
   cursor: pointer;
 }
 
-//nav font 
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
-  flex-wrap: wrap;
-  justify-content: center;
-}
 
-nav li {
-  cursor: pointer;
-  font-size: 1.3rem;
-  font-family: 'Poppins', sans-serif;
-}
-
-// LOGO
+// LOGO - moon 
 .logo-wrapper.moon {
   width: 60px;
   height: 60px;
@@ -103,12 +84,12 @@ nav li {
 
   &.dark {
     background: radial-gradient(circle at 30% 30%, #f5deb3 40%, #c2a76e 100%);
-      color: rgba(41, 40, 40, 0.411);
+    color: rgba(41, 40, 40, 0.411);
   }
 
   &.light {
     background: radial-gradient(circle at 35% 35%, #e0e0e0 40%, #bcbcbc 100%);
-      color: rgba(22, 21, 21, 0.652);
+    color: rgba(22, 21, 21, 0.652);
 
   }
 
@@ -179,14 +160,6 @@ nav li {
 
 
 
-// header theme toggle
-
-.right-actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
 .theme-toggle-wrapper {
   display: flex;
   align-items: center;
@@ -213,15 +186,15 @@ nav li {
   padding: 0;
   outline: none;
   transition: box-shadow 0.3s ease;
-  
+
   &:hover:not(:disabled) {
     box-shadow: 0 0 20px rgba(65, 105, 225, 0.3);
   }
-  
+
   &.dark:hover:not(:disabled) {
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
   }
-  
+
   &:disabled {
     cursor: not-allowed;
     opacity: 0.7;
@@ -235,10 +208,10 @@ nav li {
   border-radius: 20px;
   position: relative;
   overflow: hidden;
-  box-shadow: 
+  box-shadow:
     inset 0 2px 4px rgba(0, 0, 0, 0.1),
     0 2px 8px rgba(0, 0, 0, 0.15);
-  
+
   .animated-toggle.dark & {
     background: linear-gradient(135deg, #2C3E50 0%, #1A1A2E 100%);
   }
@@ -252,17 +225,17 @@ nav li {
   height: 28px;
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   border-radius: 50%;
-  box-shadow: 
+  box-shadow:
     0 2px 8px rgba(0, 0, 0, 0.2),
     inset 0 1px 2px rgba(255, 255, 255, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
   transform: translateX(0px);
-  
+
   .animated-toggle.dark & {
     background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
-    box-shadow: 
+    box-shadow:
       0 2px 8px rgba(0, 0, 0, 0.4),
       inset 0 1px 2px rgba(255, 255, 255, 0.1);
   }
@@ -271,9 +244,10 @@ nav li {
 .slider-content {
   width: 100%;
   height: 100%;
-  display: flex;//test
+  display: flex; //test
   padding-bottom: 1px;
 }
+
 
 .icon {
   position: absolute;
@@ -282,21 +256,21 @@ nav li {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  
+
   &.sun-icon {
     opacity: 1;
     transform: scale(1) rotate(0deg);
-    
+
     &:not(.active) {
       opacity: 0;
       transform: scale(0) rotate(360deg);
     }
   }
-  
+
   &.moon-icon {
     opacity: 0;
     transform: scale(0) rotate(-390deg);
-    
+
     &.active {
       opacity: 1;
       transform: scale(1) rotate(0deg);
@@ -304,25 +278,6 @@ nav li {
   }
 }
 
-// Additional particles styling
-.particle {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    right: -1px;
-    bottom: -1px;
-    border-radius: 50%;
-    background: inherit;
-    filter: blur(1px);
-    opacity: 0.6;
-  }
-}
 
 // Responsive adjustments
 @media (max-width: 768px) {
@@ -330,12 +285,12 @@ nav li {
     width: 52px;
     height: 28px;
   }
-  
+
   .toggle-slider {
     width: 24px;
     height: 24px;
   }
-  
+
   .icon {
     font-size: 12px;
   }
@@ -361,25 +316,15 @@ nav li {
 }
 
 
-/////
-/// auth button 
-/// 
-
+//Login/ signup auth button 
 .auth-buttons {
   display: flex;
-    align-items: center;
+  align-items: center;
   justify-content: flex-end;
   padding: 0 12px;
-
-  button {
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 8px 16px;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.611);
-    }
-  }
+  gap: 8px
+  ;
 }
+
+
+
