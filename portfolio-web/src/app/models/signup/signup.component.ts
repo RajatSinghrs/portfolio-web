@@ -21,7 +21,6 @@ export class SignupComponent {
       next: (res) => {
         localStorage.setItem('token', res.token);
         this.router.navigate(['/']);
-        // this.success = true;
       },
       error: err => {
         this.error = err.error.message || 'Signup failed';
