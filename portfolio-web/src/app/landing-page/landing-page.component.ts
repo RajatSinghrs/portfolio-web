@@ -6,7 +6,6 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
-
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
@@ -34,7 +33,7 @@ export class LandingPageComponent implements AfterViewInit {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
   @ViewChildren('resumePanel') resumePanels!: QueryList<ElementRef>;
 
-  isDarkMode = false;
+  isDarkMode = true;
   leftBoxes = new Array(3);
   rightBoxes = new Array(3);
   projects = [
@@ -181,7 +180,6 @@ export class LandingPageComponent implements AfterViewInit {
   openProject(link: string) {
     window.open(link, '_blank');
   }
-
 
 }
 
