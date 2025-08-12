@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { CodePortfolioComponent } from './code-portfolio/code-portfolio.component';
@@ -40,11 +41,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatTooltipModule,
     MatDividerModule,
     BrowserAnimationsModule,
     TypewriterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     provideClientHydration(),

@@ -59,10 +59,10 @@
   gap: 16px;
 }
 
-.code-icon {
-  font-size: 24px;
-  cursor: pointer;
-}
+// .code-icon {
+//   font-size: 24px;
+//   cursor: pointer;
+// }
 
 
 // LOGO - moon 
@@ -335,3 +335,44 @@
 
 
 
+.code-icon-container {
+
+  cursor: pointer;
+  display: flex;
+
+  .code-icon {
+    font-size: 2.2rem;
+    padding: 0.6rem;
+    border-radius: 50%;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .tooltip {
+    position: absolute;
+    top: 60%;
+    margin-top: 8px;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    color: #000;
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1),
+                0 5px 15px rgba(0, 0, 0, 0.07);
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    .tooltip {
+      top: 100%;
+      opacity: 0.95;
+    }
+  }
+}
