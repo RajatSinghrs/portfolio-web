@@ -8,7 +8,7 @@
     <form (submit)="onLogin(); $event.preventDefault()">
       <input type="email" placeholder="Email" [(ngModel)]="email" name="email" required />
       <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required />
-      <button type="submit">Login</button>
+      <button class="login-btn" type="submit">Login</button>
     </form>
 
     <div class="or-divider">OR</div>
@@ -25,6 +25,10 @@
       <span>Login with GitHub</span>
     </button>
 </div>
+ <p class="signup-text">
+      Don't have an account?
+      <a>Sign up</a>
+    </p>
     <div *ngIf="error" class="error">{{ error }}</div>
   </div>
 </div>

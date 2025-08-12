@@ -9,35 +9,27 @@ import { isPlatformBrowser } from '@angular/common';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent implements AfterViewInit  {
+export class LoginComponent implements AfterViewInit {
   email = '';
   password = '';
   error = '';
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object,private auth: AuthService, private router: Router) { }
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private auth: AuthService, private router: Router) { }
 
-   ngAfterViewInit() {
+  ngAfterViewInit() {
     // Fade & scale in
-      if (isPlatformBrowser(this.platformId)) {
-    gsap.to('.login-container', {
-      duration: 1.2,
-      opacity: 1,
-      scale: 1,
-      ease: 'power3.out'
-    });
-
-    // Pulsing glow
-    gsap.to('.login-container', {
-      boxShadow: '0 0 25px rgba(255,255,255,0.5)',
-      repeat: -1,
-      yoyo: true,
-      duration: 2
-    });
+    if (isPlatformBrowser(this.platformId)) {
+      gsap.to('.login-container', {
+        duration: 1.2,
+        opacity: 1,
+        scale: 1,
+        ease: 'power3.out'
+      });
+    }
   }
-   }
 
 
- onLogin() {
+  onLogin() {
     this.auth.login(this.email, this.password).subscribe({
       next: (res) => {
         localStorage.setItem('token', res.token);
@@ -54,6 +46,6 @@ export class LoginComponent implements AfterViewInit  {
   }
 
   loginWithGithub() {
-  window.location.href = 'http://localhost:5000/api/auth/github';
-}
+    window.location.href = 'http://localhost:5000/api/auth/github';
+  }
 }
