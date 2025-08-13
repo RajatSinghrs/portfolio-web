@@ -336,26 +336,15 @@
 
 
 .code-icon-container {
-
   cursor: pointer;
   display: flex;
-
-  .code-icon {
-    font-size: 2.2rem;
-    padding: 0.6rem;
-    border-radius: 50%;
-
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
 
   .tooltip {
     position: absolute;
     top: 60%;
-    margin-top: 8px;
+    right: 100px;
+    margin-top: 4px;
     padding: 0.5rem 0.9rem;
-    font-size: 0.9rem;
     font-weight: 500;
     white-space: nowrap;
     color: #000;

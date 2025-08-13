@@ -33,7 +33,7 @@ export class LandingPageComponent implements AfterViewInit {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
   @ViewChildren('resumePanel') resumePanels!: QueryList<ElementRef>;
 
-  isDarkMode = true;
+  isDarkMode = false;
   leftBoxes = new Array(3);
   rightBoxes = new Array(3);
   projects = [
