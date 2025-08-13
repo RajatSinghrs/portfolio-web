@@ -2,15 +2,14 @@ import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { isPlatformBrowser } from '@angular/common';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private API_URL = 'http://localhost:5000/api/auth';
-
+  private API_URL = `${environment.apiBaseUrl}/auth`;
   private authStatus = new BehaviorSubject<boolean>(this.isLoggedIn());
-
   authStatus$ = this.authStatus.asObservable();
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private http: HttpClient) { }
@@ -40,7 +39,7 @@ export class AuthService {
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('token', token);
       this.authStatus.next(true);
-
     }
   }
+
 }

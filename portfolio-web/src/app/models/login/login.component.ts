@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { isPlatformBrowser } from '@angular/common';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -40,12 +41,11 @@ export class LoginComponent implements AfterViewInit {
       }
     });
   }
-
   loginWithGoogle() {
-    window.location.href = 'http://localhost:5000/api/auth/google';
+    window.location.href = `${environment.apiBaseUrl}/auth/google`;
   }
 
   loginWithGithub() {
-    window.location.href = 'http://localhost:5000/api/auth/github';
+    window.location.href = `${environment.apiBaseUrl}/auth/github`;
   }
 }

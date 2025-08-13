@@ -6,7 +6,6 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
-
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
@@ -181,7 +180,6 @@ export class LandingPageComponent implements AfterViewInit {
   openProject(link: string) {
     window.open(link, '_blank');
   }
-
 
 }
 

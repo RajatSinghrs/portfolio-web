@@ -53,7 +53,6 @@ export class HeaderComponent implements AfterViewInit, OnInit {
 
   toggleTheme() {
     if (this.isAnimating) return;
-
     this.isAnimating = true;
     const wasLight = !this.isDarkMode;
     const newTheme = !this.isDarkMode; // Store the new theme state
@@ -207,23 +206,14 @@ export class HeaderComponent implements AfterViewInit, OnInit {
   scrollTo(sectionId: string) {
     const el = document.getElementById(sectionId);
     if (!el) return;
-
     const top = el.getBoundingClientRect().top + window.scrollY;
-
-    // Only subtract header height if the section's own padding isn't enough
-    // const headerHeight = 180;
-    // const finalTop = top - (sectionId === 'work' ? headerHeight : headerHeight );
-
-
     anime({
       targets: document.scrollingElement || document.documentElement,
       scrollTop: top,
       duration: 1000,
       easing: 'easeOutQuad'
-
     });
     console.log(sectionId, document.getElementById(sectionId)?.offsetTop);
-
   }
 
   scrollToTop() {
@@ -247,6 +237,7 @@ export class HeaderComponent implements AfterViewInit, OnInit {
     this.auth.logout();
     this.router.navigate(['/']);
   }
+
   goToLogin() {
     this.router.navigate(['/login']);
   }
